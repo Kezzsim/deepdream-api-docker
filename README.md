@@ -23,6 +23,7 @@ This container relies on https://github.com/kesara/deepdreamer for porting DeepD
 Building the Container
 ----------------------
 Nothing special if you already have Docker installed:
+
     $ git clone --branch runpod https://github.com/Kezzsim/deepdream-api-docker.git
     $ cd deepdream-api-docker
     $ docker build -t deepdream-api-runpod .
