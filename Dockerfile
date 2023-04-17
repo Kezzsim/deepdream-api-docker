@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM ubuntu:bionic
+FROM ubuntu:focal
 
 # Avoid timezone prompt
 ENV TZ=America/New_York \
@@ -27,14 +27,14 @@ RUN apt-get -q update && \
   ca-certificates \
   git \
   curl \
-  python3.8 python3-pip 
+  python3 python3-pip 
 
 # Install Cafe
 RUN yes yes | apt-get install --force-yes -q caffe-cpu
 
 # Install Python dependencies
 RUN pip3 install --upgrade pip
-RUN pip3 install numpy scipy pillow flask werkzeug
+RUN pip3 install runpod numpy scipy pillow
 
 # Clone the python3 DeepDreamer repo
 RUN git clone https://github.com/kesara/deepdreamer.git
@@ -45,7 +45,8 @@ RUN curl https://raw.githubusercontent.com/BVLC/caffe/master/models/bvlc_googlen
 RUN echo "force_backward: true" >> deploy.prototxt
 
 ADD deepdream.py deepdream.py
+ADD test_input.json test_input.json
 
 RUN mkdir uploads
 
-ENTRYPOINT FLASK_DEBUG=1 FLASK_APP=deepdream.py flask run --host=0.0.0.0
+ENTRYPOINT python3 -u ./deepdream.py
