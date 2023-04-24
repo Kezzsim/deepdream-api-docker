@@ -2,26 +2,17 @@
 import runpod
 import os
 import time
+import urllib.request
 
-RUNPODKEY = os.getenv('RUNPOD_API_KEY')
-
-sleep_time = int(os.environ.get('SLEEP_TIME', 3))
-
+RUNPODKEY = os.getenv("RUNPOD_API_KEY")
 runpod.api_key = RUNPODKEY
 ## load your model(s) into vram here
 
+
 def handler(event):
     print(event)
-    time_slept = 0
-    while time_slept < sleep_time:
-        print("working, I promise")
-        time_slept += 1
-        time.sleep(1)
-    # do the things
-
-    return "Hello World"
+    urllib.request.urlretrieve(event.get("input", {}).get("source"), "input.jpg")
+    return "Image recieved"
 
 
-runpod.serverless.start({
-    "handler": handler
-})
+runpod.serverless.start({"handler": handler})
