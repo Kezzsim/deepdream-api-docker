@@ -34,7 +34,7 @@ RUN yes yes | apt-get install --force-yes -q caffe-cpu
 
 # Install Python dependencies
 RUN pip3 install --upgrade pip
-RUN pip3 install runpod numpy scipy pillow
+RUN pip3 install runpod@git+https://github.com/Kezzsim/runpod-python.git numpy scipy pillow
 
 # Clone the python3 DeepDreamer repo
 RUN git clone https://github.com/kesara/deepdreamer.git
@@ -45,7 +45,7 @@ RUN curl https://raw.githubusercontent.com/BVLC/caffe/master/models/bvlc_googlen
 RUN echo "force_backward: true" >> deploy.prototxt
 
 ADD deepdream.py deepdream.py
-ADD test_input.json test_input.json
+#ADD test_input.json test_input.json
 
 RUN mkdir uploads
 
