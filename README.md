@@ -10,6 +10,7 @@ For now this furnishes a runpod endpoint style api which accepts JSON files cont
 This is not an official Google product.
 The goal of this project is to provide an easy to run deepDream image for nostalgia and preservation purpouses.
 
+#### Uses Imgur to host completed pictures : https://apidocs.imgur.com/
 This container relies on https://github.com/kesara/deepdreamer for porting DeepDream to python3.
 
 #### TODO:
@@ -20,6 +21,11 @@ This container relies on https://github.com/kesara/deepdreamer for porting DeepD
 - [ ] Animation support
 - [ ] Multiple dreams
 
+Setting Env Variables
+----------------------
+1. RUNPOD_API_KEY = your [runpod API key](https://www.runpod.io/console/serverless/user/settings)
+2. IMGURCLIENT_ID
+3. IMGURCLIENT_SECRET
 Building the Container
 ----------------------
 Nothing special if you already have Docker installed:
