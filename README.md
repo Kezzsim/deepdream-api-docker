@@ -24,8 +24,9 @@ This container relies on https://github.com/kesara/deepdreamer for porting DeepD
 Setting Env Variables
 ----------------------
 1. RUNPOD_API_KEY = your [runpod API key](https://www.runpod.io/console/serverless/user/settings)
-2. IMGURCLIENT_ID
-3. IMGURCLIENT_SECRET
+2. IMGURCLIENT_ID = (optional) the ID of an [IMGUR client](https://apidocs.imgur.com/) [For automatically uploading your output images]
+3. IMGURCLIENT_SECRET = (optional) the Secret of an IMGUR client [see above]
+
 Building the Container
 ----------------------
 Nothing special if you already have Docker installed:

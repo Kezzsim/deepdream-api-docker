@@ -34,7 +34,7 @@ RUN yes yes | apt-get install --force-yes -q caffe-cpu
 
 # Install Python dependencies
 RUN pip3 install --upgrade pip
-RUN pip3 install runpod@git+https://github.com/Kezzsim/runpod-python.git numpy scipy pillow imgurpython
+RUN pip3 install runpod@git+https://github.com/Kezzsim/runpod-python.git@main numpy scipy pillow imgurpython
 
 # Clone the python3 DeepDreamer repo
 RUN git clone https://github.com/kesara/deepdreamer.git
