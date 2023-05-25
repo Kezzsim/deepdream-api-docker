@@ -2,8 +2,10 @@ Deep Dream API server Container
 ====================
 
 This is an example Deep Dream container that runs https://github.com/google/deepdream in an API that can be run on compute resources provided by https://runpod.io
-https://github.com/runpod/runpod-python
+Utilizes [RunPod's Python Library](https://github.com/runpod/runpod-python).
 For now this furnishes a runpod endpoint style api which accepts JSON files containing a link to a valid .jpg image, processes said image using GPU compute, and returns an deep dream style image as a response. Additional arguments are also accepted via JSON.
+
+**This is a [runpod serverless function](https://blog.runpod.io/serverless-create-a-basic-api/) and not a standard container**
 
 ![Example image showing the HTML 5 form for making a deepDream request](https://github.com/Kezzsim/deepdream-api-docker/blob/runpod/example.png)
 
