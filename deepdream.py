@@ -50,13 +50,13 @@ def handler(event):
         network,
     )
 
-    ## Confirm output file
-    print(os.listdir(os.curdir))
-    
+    ## Rename the output file to a standard name
+    os.rename("input.jpg_0.jpg", "output.jpg")
+
     ## Option 1 : Upload to Imgur
     if client is not None:
         upload = client.upload_from_path(
-            os.path.abspath("input_0.jpg"), config=None, anon=True
+            os.path.abspath("output.jpg"), config=None, anon=True
         )
         return upload
     else:
