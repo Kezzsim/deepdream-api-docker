@@ -15,7 +15,8 @@ This container relies on https://github.com/kesara/deepdreamer for porting DeepD
 
 #### TODO:
 - [x] POST JSON REST API at `/`
-- [ ] Add parameters from JSON request
+- [x] Add parameters from JSON request
+- [ ] Confirmed [caffe-cuda support](https://anidh.medium.com/install-caffe-on-ubuntu-with-cuda-6d0da9e8f860)
 - [ ] Automatically transcode files to compatible types (only JPG is supported currently.)
 - [ ] Asynchronous request / response mode
 - [ ] Animation support
