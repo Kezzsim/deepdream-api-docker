@@ -5,7 +5,7 @@ This is an example Deep Dream container that runs https://github.com/google/deep
 https://github.com/runpod/runpod-python
 For now this furnishes a runpod endpoint style api which accepts JSON files containing a link to a valid .jpg image, processes said image using GPU compute, and returns an deep dream style image as a response. Additional arguments are also accepted via JSON.
 
-![Example image showing the HTML 5 form for making a deepDream request](https://raw.githubusercontent.com/Kezzsim/deepdream-api-docker/master/example.png)
+![Example image showing the HTML 5 form for making a deepDream request](https://github.com/Kezzsim/deepdream-api-docker/blob/runpod/example.png)
 
 This is not an official Google product.
 The goal of this project is to provide an easy to run deepDream image for nostalgia and preservation purpouses.
