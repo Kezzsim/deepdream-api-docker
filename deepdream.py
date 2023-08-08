@@ -2,9 +2,10 @@ import os
 from flask import Flask, flash, request, redirect, url_for, send_file
 from werkzeug.utils import secure_filename
 from deepdreamer.deepdreamer import deepdream
+from PIL import Image
 
 UPLOAD_FOLDER = "/uploads"
-ALLOWED_EXTENSIONS = {"jpg", "jpeg"}
+ALLOWED_EXTENSIONS = {"jpg", "jpeg", "png"}
 
 app = Flask(__name__)
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -33,6 +34,15 @@ def upload_file():
             filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
             file.save(filepath)
             # TODO: transform to .jpg if not jpg
+            if not filename.endswith(".jpg") or filename.endswith(".jpeg"):
+                print("Converting to .jpg");
+                input_im = Image.open(filepath);
+                output_im = input_im.convert('RGB');
+                filename = "{}.jpg".format(filename.rsplit(".", 1)[0]);
+                filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename);
+                output_im.save(filepath);
+                print("New Filepath: {}".format(filepath));
+
             # Get parameters from form request
             zoom = request.form.get("zoom", True);
             scale = request.form.get("scale", 0.05);
