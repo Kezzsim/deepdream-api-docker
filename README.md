@@ -18,7 +18,7 @@ This container relies on https://github.com/kesara/deepdreamer
 - [x] POST REST API at `/`
 - [x] HTML form response on GET that returns upload form
 - [x] Add parameters to HTML form and request
-- [ ] Automatically transcode files to compatible types (only JPG is supported currently.)
+- [x] Automatically transcode files to compatible types (only JPG is supported currently.)
 - [ ] Asynchronous request / response mode
 - [ ] Animation support
 - [ ] Multiple dreams
